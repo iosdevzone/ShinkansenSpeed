@@ -45,15 +45,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         mapView.setUserTrackingMode(MKUserTrackingMode.follow, animated: true)
         // Stop the display going asleep
         UIApplication.shared.isIdleTimerDisabled = true;
-        
     }
     /**
      Called when location changes, updates speed in speed label.
      */
-    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        
-        
+    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {    
         guard let newLocation = locations.first else { return }
         
         if(newLocation.speed > 0) {
